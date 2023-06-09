@@ -61,67 +61,21 @@ public class graphArray<T> {
             System.out.println("Array 2D sebagai representasi graph: ");
             System.out.println(" ");
 
-            graph.printer();
-            // for (int i = 1; i <= v; i++) {
-            // System.out.print(i + " ");
+            for (int i = 1; i <= v; i++) {
+            System.out.print(i + " ");
 
-            // for (int j = 1; j <= v; j++) {
-            // String edge = graph.getEdge(i, j);
-            // System.out.print((edge == null) ? "0 " : edge + " ");
-            // }
+            for (int j = 1; j <= v; j++) {
+            String edge = graph.getEdge(i, j);
+            System.out.print((edge == null) ? "0 " : edge + " ");
+            }
 
-            // System.out.println();
-            // }
+            System.out.println();
+            }
         } catch (Exception E) {
             System.err.println("Error. Silahkan cek kembali\n" + E.getMessage());
         }
 
         sc.close();
-    }
-
-    public void printer() {
-        // System.out.printf(
-        // "---------------------------------------------------------------%n");
-        printerHr(63);
-        System.out.printf(
-                "|%-61s|%n", " Isi Array Graph");
-        printerHr(63);
-        // System.out.printf(
-        // "---------------------------------------------------------------%n");
-
-        int colSize = (63 / (twoD_array.length - 1)) - 6;
-
-        System.out.print("| + ");
-        for (int i = 1; i <= vertices; i++) {
-            System.out.printf("| %-" + colSize + "s | ", i);
-
-        }
-        System.out.print("\n");
-        System.out.printf(
-                "---------------------------------------------------------------%n");
-
-        for (int i = 1; i <= (twoD_array.length - 1); i++) {
-
-            System.out.print("| " + i + " ");
-            for (int j = 1; j <= (twoD_array[1].length - 1); j++) {
-                T edge = getEdge(i, j);
-
-                System.out.printf("| %-" + colSize + "s | ", (edge == null) ? "0 " : edge.toString() + " ");
-            }
-            System.out.print("\n");
-
-        }
-        System.out.printf(
-                "---------------------------------------------------------------%n");
-
-    }
-
-    public void printerHr(int limit) {
-        for (int i = 0; i < limit; i++) {
-            System.out.print("-");
-        }
-
-        System.out.println();
     }
 
 }
